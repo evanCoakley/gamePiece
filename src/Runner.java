@@ -5,11 +5,46 @@ public class Runner {
 
     GamePiece gamePiece = new GamePiece();
 
-        gamePiece.setName("Bishop");
-        gamePiece.setColor("Black");
-        gamePiece.move(1, 2);
-        System.out.println(gamePiece.getPositionX());
-        System.out.println(gamePiece.getPositionY());
+
+
+
+        if(!gamePiece.isFrozen()) {
+            gamePiece.freeze();
+            System.out.println("Now Frozen");
+        }
+        if(gamePiece.isFrozen()) {
+            System.out.println("Position unchanged");
+
+        }
+
+        if(gamePiece.isFrozen()) {
+            gamePiece.unfreeze();
+            System.out.println("No Longer Frozen");
+        }
+        if(!gamePiece.isFrozen()) {
+            System.out.println("positionX before moving: " + gamePiece.getPositionX());
+            System.out.println("positionY before moving: " + gamePiece.getPositionY());
+            gamePiece.move( 5, 8);
+            System.out.println("positionX after moving: " + gamePiece.getPositionX());
+            System.out.println("positionY after moving: " + gamePiece.getPositionY());
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }

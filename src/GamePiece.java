@@ -42,20 +42,21 @@ public class GamePiece {
         this.color = color;
     }
 
-    void move(int x, int y) {
-        if(!frozen) {
-            this.positionX = x;
-            this.positionY = y;
-            System.out.println("Coordinates Changed");
-        } else{
-            System.out.println("Piece doesn't move");
-        }
+    void move(int positionX, int positionY) {
+        if(positionX > 0 && positionY > 0) {
+            this.positionX = positionX;
+            this.positionY = positionY;
+        }else System.out.println("Cannot make this move");
     }
+
+
     void freeze() {
         this.frozen = true;
+
     }
     void unfreeze() {
         this.frozen = false;
+
     }
 
 
