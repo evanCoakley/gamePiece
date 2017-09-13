@@ -43,10 +43,10 @@ public class GamePiece {
     }
 
     void move(int positionX, int positionY) {
-        if(positionX > 0 && positionY > 0) {
+        if(positionX > 0 && positionY > 0 && !isFrozen()) {
             this.positionX = positionX;
             this.positionY = positionY;
-        }else System.out.println("Cannot make this move");
+        }
     }
 
 

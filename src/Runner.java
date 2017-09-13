@@ -6,6 +6,8 @@ public class Runner {
         GamePiece gamePiece = new GamePiece();
 
 
+
+
         if (!gamePiece.isFrozen()) {
             gamePiece.freeze();
             if (gamePiece.isFrozen()) {
@@ -28,11 +30,19 @@ public class Runner {
                 } else System.out.println("Move method has errors");
 
         }
+
+        gamePiece.freeze();
         if(gamePiece.isFrozen()) {
-            gamePiece.move(0,0);
-            if(gamePiece.isFrozen()) {
+            int tempX = gamePiece.getPositionX();
+            int tempY = gamePiece.getPositionY();
+            gamePiece.move(tempX + 1, tempY + 1);
+
+            if( tempX == gamePiece.getPositionX() && tempY == gamePiece.getPositionY()) {
                 System.out.println("Verified move method does not change position when frozen");
-            } else System.out.println("Move method has is overactive");
+
+            } else {
+                System.out.println("Move method has is overactive");
+            }
         }
     }
 }
