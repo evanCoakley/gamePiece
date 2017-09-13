@@ -24,9 +24,11 @@ public class Runner {
         }
 
         if (!gamePiece.isFrozen()) {
-            gamePiece.move(5, 8);
-                if(!gamePiece.isFrozen()){
-                    System.out.println("Verified move method works");
+            int tempX = gamePiece.getPositionX();
+            int tempY = gamePiece.getPositionY();
+            gamePiece.move(tempX + 2, tempY + 2);
+                if( tempX != gamePiece.getPositionX() && tempY != gamePiece.getPositionY()){
+                    System.out.println("Move allowed when not frozen");
                 } else System.out.println("Move method has errors");
 
         }
